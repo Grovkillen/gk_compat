@@ -1,0 +1,38 @@
+<%# gk_compat: about the plugin first, then what runs and which file is used, what each supported series has, and the change log %>
+<% plugin = Redmine::Plugin.find(:gk_compat) %>
+<% changelog = ["CHANGELOG.#{current_language}.md", 'CHANGELOG.md'].map { |f| File.join(plugin.directory, f) }.find { |f| File.exist?(f) } %>
+<% if GkCompat.warning %><div class="warning"><%= l(:text_gk_compat_unknown, series: GkCompat.series, used: GkCompat.used.series, supported: GkCompat.supported.join(', ')) %></div><% end %>
+<fieldset class="box"><legend><%= l(:label_gk_compat_about) %></legend>
+  <div><strong><%= plugin.name %></strong> <%= plugin.version %></div>
+  <div><%= l(:text_gk_compat_description) %></div>
+</fieldset>
+<%# the instance's lines are text, not settings: divs, so that they do not get a settings row's room for a label %>
+<fieldset class="box"><legend><%= l(:label_gk_compat_instance) %></legend>
+<div><strong><%= l(:label_gk_compat_running) %></strong> Redmine <%= Redmine::VERSION %> (Ruby <%= RUBY_VERSION %>, Rails <%= Rails.version %>).
+   <strong><%= l(:label_gk_compat_file) %></strong> <%= GkCompat.used.series %></div>
+<div id="gk-compat-backports"><strong><%= l(:label_gk_compat_backports) %></strong> <%= GkCompat::Backports.applied.any? ? GkCompat::Backports.applied.map { |b| content_tag(:code, b) }.join(', ').html_safe : l(:label_none) %></div>
+<div id="gk-compat-fills"><strong><%= l(:label_gk_compat_fills) %></strong> <%= l(GkCompat.fills_css_variables? ? :text_gk_compat_fills_yes : :text_gk_compat_fills_no) %></div>
+</fieldset>
+<fieldset class="box"><legend><%= l(:label_gk_compat_abilities) %></legend>
+<table class="list">
+  <thead><tr><th style="text-align: start;"><%= l(:label_gk_compat_ability) %></th><% GkCompat.supported.each do |s| %><th><%= s %></th><% end %></tr></thead>
+  <tbody>
+    <% GkCompat.abilities.each do |a| %>
+      <tr><td class="name" style="text-align: start;"><code><%= a %></code> <%= l(:"text_gk_compat_ability_#{a}", default: '') %></td>
+        <% GkCompat.supported.each do |s| %><% v = GkCompat.versions[s].abilities[a] %><% st = v.nil? ? 'missing' : (v.is_a?(String) ? 'since' : (v ? 'yes' : 'no')) %><td class="series"><span class="gk-compat-ability gk-compat-ability-<%= st %>"><%= v.nil? ? l(:label_gk_compat_missing) : (v.is_a?(String) ? l(:text_gk_compat_since, release: v) : (v ? l(:general_text_Yes) : l(:general_text_No))) %></span></td><% end %></tr>
+    <% end %>
+    <% GkCompat.shims.each do |a| %>
+      <tr><td class="name" style="text-align: start;"><code><%= a %></code> (<%= l(:label_gk_compat_shim) %>) <%= l(:"text_gk_compat_shim_#{a}", default: '') %></td>
+        <% GkCompat.supported.each do |s| %><% st = GkCompat.versions[s].shims.key?(a) ? 'yes' : 'missing' %><td class="series"><span class="gk-compat-shim gk-compat-shim-<%= st %>"><%= GkCompat.versions[s].shims.key?(a) ? l(:general_text_Yes) : l(:label_gk_compat_missing) %></span></td><% end %></tr>
+    <% end %>
+  </tbody>
+</table>
+</fieldset>
+<% if changelog %>
+<fieldset class="box"><legend><%= l(:label_gk_compat_changelog) %></legend>
+  <% unless current_language.to_s.start_with?('en') %><div class="gk-changelog-note"><em><%= l(:text_gk_compat_changelog_english) %></em></div><% end %>
+  <details class="gk-changelog"><summary><%= l(:button_show) %></summary>
+  <div class="wiki"><%= Redmine::WikiFormatting.to_html('common_mark', File.read(changelog, encoding: 'UTF-8').sub(/\A.*?(?=^## )/m, '')).html_safe %></div>
+  </details>
+</fieldset>
+<% end %>

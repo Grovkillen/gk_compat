@@ -1,0 +1,1351 @@
+/* gk_compat_core_vars.css: built by tools/core_vars.rb from Redmine 7.0.2's own stylesheets; do not edit by hand.
+   Where core has fixed colours, a GK plugin marks the page with html.gk-core-vars to have core's elements drawn with core's
+   colour variables (--oc-*) the way the newest supported series draws them; without the class nothing here applies and
+   the series looks as it does. Loaded only where core lacks the variables (compat's css_variables, no). */
+
+/* application.css */
+html:where(.gk-core-vars) {
+  --color-current-marker: var(--oc-indigo-5);
+}
+:where(html.gk-core-vars) body {
+  font-family: var(--fonts-main);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) h1,
+:where(html.gk-core-vars) h2,
+:where(html.gk-core-vars) h3,
+:where(html.gk-core-vars) h4,
+:where(html.gk-core-vars) h5,
+:where(html.gk-core-vars) h6 {
+  font-family: var(--fonts-main);
+}
+:where(html.gk-core-vars) #content h1,
+:where(html.gk-core-vars) h2,
+:where(html.gk-core-vars) h3,
+:where(html.gk-core-vars) h4,
+:where(html.gk-core-vars) h5,
+:where(html.gk-core-vars) h6 {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) h4 {
+  border-block-end: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .wiki h6 {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) nav.top-menu {
+  color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .top-menu__links a,
+:where(html.gk-core-vars) .top-menu__links a:link,
+:where(html.gk-core-vars) .top-menu__links a:visited,
+:where(html.gk-core-vars) #account .dropdown-trigger {
+  color: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) .top-menu__links a:hover,
+:where(html.gk-core-vars) #account .dropdown-trigger:hover {
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .top-menu__links svg.icon-svg,
+:where(html.gk-core-vars) #account .dropdown-trigger .icon-svg {
+  stroke: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) .top-menu__links a:hover svg.icon-svg,
+:where(html.gk-core-vars) #account .dropdown-trigger:hover .icon-svg {
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) #account .dropdown-content .user-info {
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) #account .dropdown-content .logout {
+  border-block-start: 1px solid var(--oc-gray-2);
+}
+:where(html.gk-core-vars) #header {
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) #header a {
+  color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) #header a:hover {
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) #quick-search #q {
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #main-menu {
+  background: var(--oc-indigo-0);
+}
+:where(html.gk-core-vars) #main-menu li a {
+  color: var(--oc-gray-8);
+}
+:where(html.gk-core-vars) #main-menu li a:hover {
+  background-color: var(--oc-indigo-1);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) #main-menu li a.selected,
+:where(html.gk-core-vars) #main-menu li a.selected:hover {
+  background-color: var(--oc-white);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) #main-menu li a.new-object {
+  background-color: var(--oc-indigo-1);
+  border: 1px solid var(--oc-blue-7);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) #main-menu li a.new-object:hover {
+  background-color: var(--oc-indigo-2);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) #main-menu .menu-children {
+  background-color:var(--oc-white);
+  border-block-end: 1px solid var(--oc-blue-7);
+  border-inline-start: 1px solid var(--oc-blue-7);
+  border-inline-end: 1px solid var(--oc-blue-7);
+  box-shadow: 0 2px 4px rgba(var(--oc-gray-9-rgb), 0.1);
+}
+:where(html.gk-core-vars) #main-menu .menu-children li a {
+  color: var(--oc-gray-7);
+  background-color:var(--oc-white);
+}
+:where(html.gk-core-vars) #main-menu .menu-children li a:hover {
+  color: var(--oc-white);
+  background-color: var(--oc-blue-7);
+}
+:where(html.gk-core-vars) #sidebar {
+  background: var(--oc-gray-0);
+  border-inline-start: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #sidebar h3 {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) #sidebar hr {
+  background: var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #sidebar-switch-button svg {
+  stroke: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) #sidebar-switch-button:hover {
+  background-color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) #content {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) #footer {
+  border-block-start: 1px solid var(--oc-gray-4);
+  color: var(--oc-gray-5);
+  background: var(--oc-white);
+}
+:where(html.gk-core-vars) #login-form {
+  background-color: var(--oc-orange-1);
+}
+:where(html.gk-core-vars) div.modal {
+  background:var(--oc-white);
+}
+:where(html.gk-core-vars) .decoration-red,
+:where(html.gk-core-vars) a.decoration-red {
+  color: var(--oc-red-9) !important;
+}
+:where(html.gk-core-vars) a,
+:where(html.gk-core-vars) a:link,
+:where(html.gk-core-vars) a:visited {
+  color: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) a:hover,
+:where(html.gk-core-vars) a:active {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) a.issue.closed,
+:where(html.gk-core-vars) a.issue.closed:link,
+:where(html.gk-core-vars) a.issue.closed:visited {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) a.project.closed,
+:where(html.gk-core-vars) a.project.closed:link,
+:where(html.gk-core-vars) a.project.closed:visited {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) a.user.locked,
+:where(html.gk-core-vars) a.user.locked:link,
+:where(html.gk-core-vars) a.user.locked:visited {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) a.user.user-mention {
+  background-color: var(--oc-blue-0);
+}
+:where(html.gk-core-vars) #sidebar a.selected {
+  background-color: var(--oc-indigo-1);
+  color: var(--oc-indigo-9);
+}
+:where(html.gk-core-vars) #sidebar a.selected:hover {
+  color: var(--oc-indigo-9);
+}
+:where(html.gk-core-vars) #sidebar a.selected svg.icon-svg {
+  stroke: var(--oc-indigo-9) !important;
+}
+:where(html.gk-core-vars) a#toggle-completed-versions {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) a#toggle-completed-versions svg,
+:where(html.gk-core-vars) a#toggle-completed-versions:hover svg {
+  stroke:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .drdn-content {
+  background-color:var(--oc-white);
+  border:1px solid var(--oc-gray-4);
+  color:var(--oc-gray-7);
+}
+:where(html.gk-core-vars) .drdn-content .autocomplete:focus {
+  border-color: var(--oc-blue-5);
+}
+:where(html.gk-core-vars) div + .drdn-items {
+  border-block-start: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .drdn-items>* {
+  border:1px solid var(--oc-white);
+}
+:where(html.gk-core-vars) .drdn-items>*:focus {
+  border:1px dotted var(--oc-gray-5);
+}
+:where(html.gk-core-vars) .drdn-items>span {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .contextual .drdn-items > a:hover,
+:where(html.gk-core-vars) .journal-actions .drdn-items > a:hover {
+  color: var(--oc-blue-9);
+  border: 1px solid var(--oc-blue-7);
+  background-color: var(--oc-blue-0);
+}
+:where(html.gk-core-vars) #project-jump .drdn-trigger {
+  border:1px solid var(--oc-gray-4);
+  color:var(--oc-gray-7);
+  background:var(--oc-white) url(/chevron-down.svg) no-repeat 98% 50%;
+}
+:where(html.gk-core-vars) #project-jump .drdn-items>* {
+  color:var(--oc-gray-7) !important;
+}
+:where(html.gk-core-vars) #project-jump .drdn-items>a:hover {
+  background-color: var(--oc-blue-7);
+  color:var(--oc-white) !important;
+}
+:where(html.gk-core-vars) table.list,
+:where(html.gk-core-vars) .table-list {
+  border-block-start: 1px solid var(--oc-gray-4);
+  border-block-end: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) table.list th,
+:where(html.gk-core-vars) .table-list-header {
+  background-color: var(--oc-gray-2);
+  border-block-end: 2px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) table.list td {
+  border-block-start: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) table.list tr.overdue:not(.context-menu-selection) td.due_date {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) tr.project.closed,
+:where(html.gk-core-vars) tr.project.archived {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) tr.project.closed a,
+:where(html.gk-core-vars) tr.project.archived a {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) table.issues td.block_column {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.issue-report tr.total,
+:where(html.gk-core-vars) table.issue-report-detailed tr.total {
+  border-block-start: 2px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) tr.version.closed,
+:where(html.gk-core-vars) tr.version.closed a {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) tr.user.locked,
+:where(html.gk-core-vars) tr.user.registered {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) tr.user.locked a,
+:where(html.gk-core-vars) tr.user.registered a {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) table.permissions td.role {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) tr.group td {
+  border-block-end: 2px solid var(--oc-gray-4);
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) tr.group span.totals {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) tr.group span.totals .value {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) tr.group a.toggle-all {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) .box table.list:not(.odd-even) tbody tr:nth-child(even),
+:where(html.gk-core-vars) .box .even {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) table.list:not(.odd-even) tbody tr:nth-child(odd),
+:where(html.gk-core-vars) .odd {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) table.list:not(.odd-even) tbody tr:nth-child(even),
+:where(html.gk-core-vars) .even {
+  background-color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) table.list:not(.odd-even) tbody tr:nth-child(odd):hover,
+:where(html.gk-core-vars) .odd:hover,
+:where(html.gk-core-vars) table.list:not(.odd-even) tbody tr:nth-child(even):hover,
+:where(html.gk-core-vars) .even:hover {
+  background-color:var(--oc-yellow-0);
+}
+:where(html.gk-core-vars) input:disabled,
+:where(html.gk-core-vars) select:disabled,
+:where(html.gk-core-vars) textarea:disabled {
+  background-color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .highlight {
+  background-color: var(--oc-yellow-2);
+}
+:where(html.gk-core-vars) .highlight.token-1 {
+  background-color: var(--oc-red-2);
+}
+:where(html.gk-core-vars) .highlight.token-2 {
+  background-color: var(--oc-green-2);
+}
+:where(html.gk-core-vars) .highlight.token-3 {
+  background-color: var(--oc-violet-1);
+}
+:where(html.gk-core-vars) .box {
+  background-color: var(--oc-gray-0);
+  color: var(--oc-gray-7);
+  border: 1px solid var(--oc-gray-2);
+}
+:where(html.gk-core-vars) input,
+:where(html.gk-core-vars) select,
+:where(html.gk-core-vars) textarea,
+:where(html.gk-core-vars) button {
+  color: var(--oc-gray-9);
+  background-color: var(--oc-white);
+  border:1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) select {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) input[type="submit"],
+:where(html.gk-core-vars) button[type="submit"] {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) input[type="submit"]:hover,
+:where(html.gk-core-vars) button[type="submit"]:hover {
+  background-color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) input[type="text"]:focus,
+:where(html.gk-core-vars) input[type="text"]:active,
+:where(html.gk-core-vars) input[type="password"]:focus,
+:where(html.gk-core-vars) input[type="password"]:active,
+:where(html.gk-core-vars) input[type="date"]:focus,
+:where(html.gk-core-vars) input[type="date"]:active,
+:where(html.gk-core-vars) input[type="number"]:focus,
+:where(html.gk-core-vars) input[type="number"]:active,
+:where(html.gk-core-vars) select:focus,
+:where(html.gk-core-vars) select:active,
+:where(html.gk-core-vars) textarea:focus,
+:where(html.gk-core-vars) textarea:active {
+  border: 1px solid var(--oc-blue-5);
+}
+:where(html.gk-core-vars) select[multiple=multiple] {
+  background: var(--oc-white);
+}
+:where(html.gk-core-vars) fieldset {
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) legend {
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) hr {
+  background: var(--oc-gray-4);
+}
+:where(html.gk-core-vars) blockquote {
+  border-inline-start: 3px solid var(--oc-gray-3);
+}
+:where(html.gk-core-vars) abbr[title],
+:where(html.gk-core-vars) span.field-description[title] {
+  border-block-end: 1px dotted var(--oc-gray-5);
+}
+:where(html.gk-core-vars) body.textarea-proportional textarea.wiki-edit {
+  font-family: var(--fonts-main);
+}
+:where(html.gk-core-vars) div.issue {
+  background: var(--oc-yellow-0);
+}
+:where(html.gk-core-vars) div.issue div.subject p {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) div.issue .next-prev-links {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) div.issue.overdue .due-date .value {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) div#sticky-issue-header {
+  border-block-end: 1px solid var(--oc-gray-4);
+  box-shadow: 0 2px 6px rgba(var(--oc-black-rgb), 0.15);
+}
+:where(html.gk-core-vars) div#activity dt.me .time {
+  border-block-end: 1px solid var(--oc-gray-6);
+}
+:where(html.gk-core-vars) div#activity dt .time {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) div#activity dd span.description,
+:where(html.gk-core-vars) #search-results dd span.description {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) div#activity h3 {
+  background-color: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) div#activity dt {
+  border-block-start: 1px solid var(--oc-gray-2);
+}
+:where(html.gk-core-vars) div#roadmap header:target {
+  background-color: var(--oc-blue-0);
+}
+:where(html.gk-core-vars) div#version-summary {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) table#time-report tbody tr.subtotal {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table#time-report tbody tr.subtotal td.hours {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table#time-report tbody tr.total {
+  background-color: var(--oc-gray-2);
+  border-block-start: 2px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.wiki a:target + h1,
+:where(html.gk-core-vars) div.wiki a:target + h2,
+:where(html.gk-core-vars) div.wiki a:target + h3,
+:where(html.gk-core-vars) div.wiki a:target + h4,
+:where(html.gk-core-vars) div.wiki a:target + h5,
+:where(html.gk-core-vars) div.wiki a:target + h6 {
+  background-color:var(--oc-blue-0);
+}
+:where(html.gk-core-vars) .wiki-update-info {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) ul.projects li.root div.archived,
+:where(html.gk-core-vars) ul.projects li.child div.archived {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) #projects-index li.root ul.projects {
+  border-inline-start: 3px solid var(--oc-gray-3);
+}
+:where(html.gk-core-vars) #projects-index ul.projects li.root {
+  border: 1px solid var(--oc-gray-4);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) #projects-index ul.projects div.root a.project {
+  font-family: var(--fonts-main);
+}
+:where(html.gk-core-vars) ul.properties {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.transitions td.enabled {
+  background: var(--oc-green-2);
+}
+:where(html.gk-core-vars) table.fields_permissions td.readonly {
+  background:var(--oc-gray-4);
+}
+:where(html.gk-core-vars) table.fields_permissions td.required {
+  background:var(--oc-red-4);
+}
+:where(html.gk-core-vars) span.pagination {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .pagination ul.pages li {
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .pagination ul.pages li.current {
+  background-color: var(--oc-blue-7);
+}
+:where(html.gk-core-vars) .pagination ul.pages li.page:hover {
+  background-color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .pagination ul.pages li.page a:hover,
+:where(html.gk-core-vars) .pagination ul.pages li.page a:active {
+  color: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) .tabular label.error {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) .tabular label.error + *:not(#issue_description_and_toolbar),
+:where(html.gk-core-vars) .tabular label.error + span#issue_description_and_toolbar div.jstBlock {
+  border: 1px solid var(--oc-red-9);
+}
+:where(html.gk-core-vars) span.required {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) .check_box_group {
+  background:var(--oc-white);
+  border:1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .attachments_fields input.filename,
+:where(html.gk-core-vars) #existing-attachments .filename {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) .existing-attachment.deleted .filename {
+  color:var(--oc-gray-6) !important;
+}
+:where(html.gk-core-vars) div.fileover,
+:where(html.gk-core-vars) p.custom-field-filedroplistner.fileover {
+  background-color: var(--oc-violet-0);
+}
+:where(html.gk-core-vars) div.attachments span.author {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) div.thumbnail {
+  background: var(--oc-white);
+  border: 2px solid var(--oc-gray-3);
+}
+:where(html.gk-core-vars) p.other-formats {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) em.info {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) input.autocomplete {
+  background: var(--oc-white) url(/search.svg) no-repeat 2px 50%;
+}
+:where(html.gk-core-vars) .objects-selection>div,
+:where(html.gk-core-vars) #user_group_ids {
+  -webkit-column-rule: 1px solid var(--oc-gray-4);
+  -moz-column-rule: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.flash.error,
+:where(html.gk-core-vars) #errorExplanation {
+  background-color: var(--oc-red-1);
+  border-color: var(--oc-red-3);
+  color: var(--oc-pink-9);
+}
+:where(html.gk-core-vars) div.flash.error svg.icon-svg,
+:where(html.gk-core-vars) #errorExplanation svg.icon-svg {
+  stroke: var(--oc-pink-9);
+}
+:where(html.gk-core-vars) div.flash.notice {
+  background-color: var(--oc-green-1);
+  border-color: var(--oc-green-3);
+  color: var(--oc-green-9);
+}
+:where(html.gk-core-vars) div.flash.notice svg.icon-svg {
+  stroke: var(--oc-green-9);
+}
+:where(html.gk-core-vars) div.flash.warning,
+:where(html.gk-core-vars) .conflict {
+  background-color: var(--oc-yellow-1);
+  border-color: var(--oc-yellow-3);
+  color: var(--oc-pink-9);
+}
+:where(html.gk-core-vars) div.flash.warning svg.icon-svg,
+:where(html.gk-core-vars) .conflict svg.icon-svg {
+  stroke: var(--oc-pink-9);
+}
+:where(html.gk-core-vars) .nodata,
+:where(html.gk-core-vars) .warning {
+  background-color: var(--oc-yellow-1);
+  border-color: var(--oc-yellow-3);
+  color: var(--oc-pink-9);
+}
+:where(html.gk-core-vars) .markdown-alert-tip {
+  border-color: var(--oc-green-7);
+}
+:where(html.gk-core-vars) .markdown-alert-tip .markdown-alert-title {
+  color: var(--oc-green-9);
+}
+:where(html.gk-core-vars) .markdown-alert-tip .markdown-alert-title svg {
+  stroke: var(--oc-green-9);
+}
+:where(html.gk-core-vars) .markdown-alert-important {
+  border-color: var(--oc-grape-7);
+}
+:where(html.gk-core-vars) .markdown-alert-important .markdown-alert-title {
+  color: var(--oc-grape-9);
+}
+:where(html.gk-core-vars) .markdown-alert-important .markdown-alert-title svg {
+  stroke: var(--oc-grape-9);
+}
+:where(html.gk-core-vars) .markdown-alert-caution {
+  border-color: var(--oc-yellow-7);
+}
+:where(html.gk-core-vars) .markdown-alert-caution .markdown-alert-title {
+  color: var(--oc-yellow-9);
+}
+:where(html.gk-core-vars) .markdown-alert-caution .markdown-alert-title svg {
+  stroke: var(--oc-yellow-9);
+}
+:where(html.gk-core-vars) .markdown-alert-warning {
+  border-color: var(--oc-orange-7);
+}
+:where(html.gk-core-vars) .markdown-alert-warning .markdown-alert-title {
+  color: var(--oc-orange-9);
+}
+:where(html.gk-core-vars) .markdown-alert-warning .markdown-alert-title svg {
+  stroke: var(--oc-orange-9);
+}
+:where(html.gk-core-vars) .markdown-alert-note {
+  border-color: var(--oc-indigo-7);
+}
+:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title {
+  color: var(--oc-indigo-9);
+}
+:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title svg {
+  stroke: var(--oc-indigo-9);
+}
+:where(html.gk-core-vars) #ajax-indicator {
+  background-color:var(--oc-gray-2);
+  border: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) ul.cal {
+  border: 1px solid var(--oc-gray-4);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) .cal .calhead {
+  background-color:var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .cal .week-number {
+  background-color:var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .cal .calbody {
+  border: 1px solid var(--oc-gray-4);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) .cal .calbody.this-month {
+  background-color:var(--oc-white);
+}
+:where(html.gk-core-vars) .cal .calbody.other-month {
+  background-color:var(--oc-gray-1);
+}
+:where(html.gk-core-vars) .cal .calbody.other-month p.day-num {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) .cal .calbody.today .day-value {
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .cal .calbody.nwday:not(.other-month) {
+  background-color:var(--oc-gray-1);
+}
+:where(html.gk-core-vars) .tooltip:hover {
+  color:var(--oc-black);
+}
+:where(html.gk-core-vars) .tooltip span.tip a {
+  color: var(--oc-blue-9) !important;
+}
+:where(html.gk-core-vars) div.tooltip:hover span.tip {
+  border:1px solid var(--oc-gray-7);
+  background-color:var(--oc-white);
+  color:var(--oc-gray-7);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) #document-list .document-group h3 {
+  background-color: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) #document-list .document-item .updated_on {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.progress td.closed {
+  background: var(--oc-green-7) none repeat scroll 0%;
+}
+:where(html.gk-core-vars) table.progress td.done {
+  background: var(--oc-green-4) none repeat scroll 0%;
+}
+:where(html.gk-core-vars) table.progress td.todo {
+  background: var(--oc-gray-3) none repeat scroll 0%;
+}
+:where(html.gk-core-vars) p.progress-info {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) #content .tabs ul {
+  border-block-end: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #content .tabs ul li a {
+  border: 1px solid var(--oc-gray-4);
+  border-block-end: 1px solid var(--oc-gray-4);
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) #content .tabs ul li a:hover {
+  color:var(--oc-gray-6);
+}
+:where(html.gk-core-vars) #content .tabs ul li a.selected {
+  background-color: var(--oc-white);
+  border: 1px solid var(--oc-gray-4);
+  border-block-end: 1px solid var(--oc-white);
+  color: var(--oc-gray-8);
+  box-shadow: 0 1px 2px rgba(var(--oc-black-rgb), 0.1);
+}
+:where(html.gk-core-vars) #content .tabs ul li a.selected:hover {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) div.tabs-buttons {
+  border-block-end: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) button.tab-left,
+:where(html.gk-core-vars) button.tab-right {
+  border: 1px solid var(--oc-gray-4);
+  border-block-end: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) button.tab-left:hover,
+:where(html.gk-core-vars) button.tab-right:hover {
+  background-color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) button.tab-left svg.icon-svg,
+:where(html.gk-core-vars) button.tab-right svg.icon-svg {
+  stroke: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) button.tab-left.disabled,
+:where(html.gk-core-vars) button.tab-right.disabled {
+  background-color: var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .diff_out {
+  background: var(--oc-red-1);
+}
+:where(html.gk-core-vars) .diff_out span {
+  background: var(--oc-red-3);
+}
+:where(html.gk-core-vars) .diff_in {
+  background: var(--oc-green-1);
+}
+:where(html.gk-core-vars) .diff_in span {
+  background: var(--oc-green-3);
+}
+:where(html.gk-core-vars) .text-diff {
+  background-color:var(--oc-gray-0);
+  color:var(--oc-gray-7);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.wiki table,
+:where(html.gk-core-vars) div.wiki td,
+:where(html.gk-core-vars) div.wiki th {
+  border: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) div.wiki a.new {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) div.wiki pre {
+  background-color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.wiki pre .syntaxhl {
+  background: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) div.wiki *:not(pre)>code,
+:where(html.gk-core-vars) div.wiki>code {
+  background: rgba(var(--oc-gray-9-rgb), 0.08);
+}
+:where(html.gk-core-vars) div.pre-wrapper a.copy-pre-content-link {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.wiki ul.toc {
+  background-color: var(--oc-yellow-0);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.wiki ul.toc>li:first-child {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) div.wiki ul.toc a {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) div.wiki ul.toc a:hover {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) a.wiki-anchor:hover {
+  color: var(--oc-gray-5) !important;
+}
+:where(html.gk-core-vars) h1:hover a.wiki-anchor,
+:where(html.gk-core-vars) h2:hover a.wiki-anchor,
+:where(html.gk-core-vars) h3:hover a.wiki-anchor,
+:where(html.gk-core-vars) h4:hover a.wiki-anchor,
+:where(html.gk-core-vars) h5:hover a.wiki-anchor,
+:where(html.gk-core-vars) h6:hover a.wiki-anchor {
+  color: var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .block-receiver {
+  border:1px dashed var(--oc-white);
+}
+:where(html.gk-core-vars) .dragging .block-receiver {
+  border:1px dashed var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .mypage-box {
+  border:1px solid var(--oc-gray-4);
+  color:var(--oc-gray-7);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) .journals h4.journal-header {
+  background-color: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) .journals h4.journal-header .update-info {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .journals div:target h4.journal-header {
+  background-color:var(--oc-blue-0);
+}
+:where(html.gk-core-vars) .journals .private-notes {
+  border-inline-start: 2px solid var(--oc-red-8);
+}
+:where(html.gk-core-vars) .journals .journal-meta .journal-link {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) .journals .journal-details,
+:where(html.gk-core-vars) ul.revision-info {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .journals .journal-details a,
+:where(html.gk-core-vars) ul.revision-info a {
+  color: var(--oc-blue-6);
+}
+:where(html.gk-core-vars) .journals .journal-details a:hover,
+:where(html.gk-core-vars) ul.revision-info a:hover {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) .badge-private {
+  background: var(--oc-red-8);
+  color: var(--oc-white);
+  border: 1px solid var(--oc-red-8);
+}
+:where(html.gk-core-vars) .badge-count {
+  color: var(--oc-white);
+  background: var(--oc-indigo-5);
+}
+:where(html.gk-core-vars) .badge-status-open {
+  color: var(--oc-blue-9);
+  border: 1px solid var(--oc-blue-9);
+}
+:where(html.gk-core-vars) .badge-status-locked {
+  color: var(--oc-gray-7);
+  border: 1px solid var(--oc-gray-7);
+}
+:where(html.gk-core-vars) .badge-status-closed {
+  color: var(--oc-green-9);
+  border: 1px solid var(--oc-green-9);
+}
+:where(html.gk-core-vars) .badge-issues-count {
+  background: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) .ui-tooltip {
+  background: var(--oc-black);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) a.icon .icon-svg,
+:where(html.gk-core-vars) a.icon-only .icon-svg,
+:where(html.gk-core-vars) span.icon-actions .icon-svg {
+  stroke: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) a.icon:hover .icon-svg,
+:where(html.gk-core-vars) a.icon-only:hover .icon-svg,
+:where(html.gk-core-vars) span.icon-actions:hover .icon-svg {
+  stroke: var(--oc-red-9);
+}
+:where(html.gk-core-vars) a.icon .icon-svg-filled,
+:where(html.gk-core-vars) a.icon-only .icon-svg-filled {
+  fill: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) a.icon:hover .icon-svg-filled,
+:where(html.gk-core-vars) a.icon-only:hover .icon-svg-filled {
+  fill: var(--oc-red-9);
+}
+:where(html.gk-core-vars) .icon-ok svg.icon-svg {
+  stroke: var(--oc-green-8);
+}
+:where(html.gk-core-vars) .icon-error svg.icon-svg {
+  stroke: var(--oc-red-8);
+}
+:where(html.gk-core-vars) .icon-warning svg.icon-svg {
+  stroke: var(--oc-yellow-8);
+}
+:where(html.gk-core-vars) svg.icon-svg {
+  stroke: var(--oc-gray-8);
+}
+:where(html.gk-core-vars) svg.icon-svg-filled {
+  fill: var(--oc-gray-8);
+}
+:where(html.gk-core-vars) span.icon-checked:has(:not(a svg.icon-svg)) svg.icon-svg {
+  stroke: var(--oc-green-8);
+}
+:where(html.gk-core-vars) tr.ui-sortable-helper {
+  border:1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) div.avatar-with-child > .avatar:nth-child(2) {
+  border: 2px solid rgba(var(--oc-white-rgb), 0.9);
+}
+:where(html.gk-core-vars) div.avatar-with-child > .avatar:nth-child(2).group-avatar {
+  background-color: var(--oc-white);
+}
+:where(html.gk-core-vars) .sample-data {
+  border:1px solid var(--oc-gray-4);
+  background-color:var(--oc-white);
+}
+:where(html.gk-core-vars) .sample-data td {
+  border:1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #progress-label {
+  color: var(--oc-gray-7);
+  text-shadow: 1px 1px 0 var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-0 {
+  background-color: var(--oc-red-7);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-1 {
+  background-color: var(--oc-orange-6);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-2 {
+  background-color: var(--oc-yellow-4);
+  color: var(--oc-black);
+}
+:where(html.gk-core-vars) .avatar-color-3 {
+  background-color: var(--oc-green-7);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-4 {
+  background-color: var(--oc-cyan-6);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-5 {
+  background-color: var(--oc-blue-7);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-6 {
+  background-color: var(--oc-grape-7);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .avatar-color-7 {
+  background-color: var(--oc-pink-5);
+  color: var(--oc-white);
+}
+:where(html.gk-core-vars) .reaction-button.readonly .icon-svg {
+  stroke: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .reaction-button.readonly .icon-label {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) #news-list article.news-article header p.author {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .ui-autocomplete,
+:where(html.gk-core-vars) .ui-menu {
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .ui-state-active,
+:where(html.gk-core-vars) .ui-widget-content .ui-state-active,
+:where(html.gk-core-vars) .ui-widget-header .ui-state-active {
+  border-color: var(--oc-blue-7);
+  background: var(--oc-blue-7);
+}
+:where(html.gk-core-vars) .ui-widget-overlay {
+  background: var(--oc-black);
+}
+:where(html.gk-core-vars) .tribute-container ul {
+  background-color: var(--oc-white);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .tribute-container li.highlight {
+  background-color: var(--oc-blue-7);
+  color:var(--oc-white);
+}
+@media print {
+  :where(html.gk-core-vars) #main {
+    background: var(--oc-white);
+  }
+  :where(html.gk-core-vars) #content {
+    background: var(--oc-white);
+  }
+  :where(html.gk-core-vars) table.list th,
+  :where(html.gk-core-vars) table.list td {
+    border: 1px solid var(--oc-gray-5);
+  }
+}
+:where(html.gk-core-vars) .filecontent.wiki {
+  border: 1px solid var(--oc-gray-4);
+  box-shadow: 0 1px 2px rgba(var(--oc-gray-9-rgb), 0.05);
+}
+:where(html.gk-core-vars) th[role=columnheader]:not(.no-sort):after {
+  border-color: var(--oc-gray-8) transparent;
+}
+
+/* context_menu.css */
+:where(html.gk-core-vars) #context-menu ul {
+  border: 1px solid var(--oc-gray-4);
+  box-shadow: 0 2px 4px rgba(var(--oc-gray-9-rgb), 0.1);
+}
+:where(html.gk-core-vars) #context-menu a.disabled,
+:where(html.gk-core-vars) #context-menu a.disabled:hover {
+  color: var(--oc-gray-5);
+}
+:where(html.gk-core-vars) #context-menu li:hover {
+  border:1px solid var(--oc-blue-8);
+  background-color:var(--oc-blue-0);
+}
+:where(html.gk-core-vars) #context-menu a:hover {
+  color:var(--oc-blue-9);
+}
+:where(html.gk-core-vars) .context-menu-selection {
+  background-color:var(--oc-blue-7) !important;
+  color:var(--oc-gray-0) !important;
+}
+:where(html.gk-core-vars) .context-menu-selection a,
+:where(html.gk-core-vars) .context-menu-selection a:hover {
+  color:var(--oc-gray-0) !important;
+}
+:where(html.gk-core-vars) .context-menu-selection:hover {
+  background-color:var(--oc-blue-7) !important;
+  color:var(--oc-gray-0)  !important;
+}
+:where(html.gk-core-vars) .context-menu-selection svg.icon-svg {
+  stroke: var(--oc-white) !important;
+}
+:where(html.gk-core-vars) div#gantt_area .context-menu-selection {
+  background-color: rgba(var(--oc-blue-7-rgb), 0.4) !important;
+}
+:where(html.gk-core-vars) div#gantt_area .context-menu-selection:hover {
+  background-color: rgba(var(--oc-blue-7-rgb), 0.4) !important;
+}
+:where(html.gk-core-vars) div#gantt_area .context-menu-selection a {
+  color: var(--oc-blue-9) !important;
+}
+
+/* jstoolbar.css */
+:where(html.gk-core-vars) .wiki-preview {
+  color: var(--oc-gray-9);
+  background-color: var(--oc-white);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .wiki-preview p.empty-preview {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .jstElements button {
+  border-color: var(--oc-gray-4);
+  background-color : var(--oc-gray-0);
+}
+:where(html.gk-core-vars) .jstElements button:hover {
+  border-color: var(--oc-gray-5);
+  background-color: var(--oc-gray-3);
+}
+:where(html.gk-core-vars) .table-generator td {
+  border: 2px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) .table-generator td.selected-cell,
+:where(html.gk-core-vars) .table-generator td:hover {
+  background-color: var(--oc-blue-1);
+}
+:where(html.gk-core-vars) .jstb_pre::before {
+  color: var(--oc-gray-9);
+}
+
+/* gantt.css */
+:where(html.gk-core-vars) .gantt_hdr {
+  border-block: 1px solid var(--oc-gray-4);
+  border-inline-start: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) #gantt_area .gantt_hdr {
+  border-inline-end: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .gantt_subjects_container:not(.draw_selected_columns) .gantt_hdr,
+:where(html.gk-core-vars) .last_gantt_selected_column .gantt_hdr {
+  border-inline-end: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) .gantt_hdr.nwday {
+  background-color: var(--oc-gray-1);
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .gantt_subjects div.issue-subject:hover {
+  background-color: var(--oc-yellow-0);
+}
+:where(html.gk-core-vars) .task {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .task_late {
+  background: var(--oc-red-5) url(/task_late.png);
+  border: 1px solid var(--oc-red-5);
+}
+:where(html.gk-core-vars) .task_done {
+  background: var(--oc-green-7) url(/task_done.png);
+  border: 1px solid var(--oc-green-7);
+}
+:where(html.gk-core-vars) .task_todo {
+  background: var(--oc-gray-5) url(/task_todo.png);
+  border: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) .task_todo.parent {
+  background: var(--oc-gray-6);
+  border: 1px solid var(--oc-gray-6);
+}
+:where(html.gk-core-vars) .version.task_late {
+  background: var(--oc-red-5) url(/milestone_late.png);
+  border: 1px solid var(--oc-red-5);
+}
+:where(html.gk-core-vars) .version.task_done {
+  background: var(--oc-green-7) url(/milestone_done.png);
+  border: 1px solid var(--oc-green-7);
+}
+:where(html.gk-core-vars) .version.task_todo {
+  background: var(--oc-white) url(/milestone_todo.png);
+  border: 1px solid var(--oc-white);
+}
+:where(html.gk-core-vars) .project.task_late {
+  background: var(--oc-red-5) url(/milestone_late.png);
+  border: 1px solid var(--oc-red-5);
+}
+:where(html.gk-core-vars) .project.task_done {
+  background: var(--oc-green-7) url(/milestone_done.png);
+  border: 1px solid var(--oc-green-7);
+}
+:where(html.gk-core-vars) .project.task_todo {
+  background: var(--oc-white) url(/milestone_todo.png);
+  border: 1px solid var(--oc-white);
+}
+:where(html.gk-core-vars) .version-behind-schedule a,
+:where(html.gk-core-vars) .issue-behind-schedule a {
+  color: var(--oc-yellow-8);
+}
+:where(html.gk-core-vars) .version-overdue a,
+:where(html.gk-core-vars) .issue-overdue a,
+:where(html.gk-core-vars) .project-overdue a {
+  color: var(--oc-red-8);
+}
+
+/* scm.css */
+:where(html.gk-core-vars) li.change.change-A svg.icon-svg {
+  fill: var(--oc-green-7);
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) li.change.change-M svg.icon-svg {
+  fill: var(--oc-yellow-7);
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) li.change.change-C svg.icon-svg {
+  fill: var(--oc-cyan-7);
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) li.change.change-R svg.icon-svg {
+  fill: var(--oc-grape-7);
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) li.change.change-D svg.icon-svg {
+  fill: var(--oc-red-7);
+  stroke: var(--oc-white);
+}
+:where(html.gk-core-vars) li.change .copied-from {
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.filecontent {
+  border: 1px solid var(--oc-gray-4);
+  background-color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) table.filecontent th {
+  border: 1px solid var(--oc-gray-4);
+  background-color: var(--oc-gray-1);
+}
+:where(html.gk-core-vars) table.filecontent th.filename {
+  background-color: var(--oc-gray-2);
+}
+:where(html.gk-core-vars) table.filecontent tr.spacing td {
+  background: rgba(var(--oc-blue-1-rgb), 0.3);
+}
+:where(html.gk-core-vars) table.filecontent th.line-num {
+  border: 1px solid var(--oc-gray-4);
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.filecontent tr:target th.line-num {
+  background-color:var(--oc-gray-3);
+  color: var(--oc-gray-6);
+}
+:where(html.gk-core-vars) table.filecontent tr:target td.line-code {
+  background-color:var(--oc-blue-0);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-0 td.line-code {
+  border-inline-start-color: var(--oc-yellow-1);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-1 td.line-code {
+  border-inline-start-color: var(--oc-grape-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-2 td.line-code {
+  border-inline-start-color: var(--oc-cyan-1);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-3 td.line-code {
+  border-inline-start-color: var(--oc-orange-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-4 td.line-code {
+  border-inline-start-color: var(--oc-lime-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-5 td.line-code {
+  border-inline-start-color: var(--oc-indigo-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-6 td.line-code {
+  border-inline-start-color: var(--oc-pink-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-7 td.line-code {
+  border-inline-start-color: var(--oc-violet-1);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-8 td.line-code {
+  border-inline-start-color: var(--oc-green-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-9 td.line-code {
+  border-inline-start-color: var(--oc-violet-3);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-10 td.line-code {
+  border-inline-start-color: var(--oc-red-3);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-11 td.line-code {
+  border-inline-start-color: var(--oc-blue-2);
+}
+:where(html.gk-core-vars) table.annotate tr.bloc-change {
+  border-block-start: 1px solid var(--oc-gray-3);
+}
+:where(html.gk-core-vars) table.annotate td.line-code {
+  background-color: var(--oc-gray-0);
+  border-inline-start: 6px solid var(--oc-gray-3);
+}
+
+/* wiki_syntax.css */
+:where(html.gk-core-vars) h1 {
+  font-family: var(--fonts-main);
+  color: var(--oc-gray-8);
+}
+:where(html.gk-core-vars) body {
+  font-family: var(--fonts-main);
+  color: var(--oc-gray-8);
+}
+:where(html.gk-core-vars) table th img {
+  border: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) table th .syntax-pre {
+  border: 1px solid var(--oc-gray-5);
+}
+:where(html.gk-core-vars) table th .syntax-pre:before {
+  color: var(--oc-gray-7);
+}
+:where(html.gk-core-vars) table td {
+  background-color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) table.sample th,
+:where(html.gk-core-vars) table.sample td {
+  border: solid 1px var(--oc-gray-5);
+}
+:where(html.gk-core-vars) a,
+:where(html.gk-core-vars) a:link,
+:where(html.gk-core-vars) a:visited {
+  color: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) a:hover,
+:where(html.gk-core-vars) a:active {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) .markdown-alert-note {
+  border-color: var(--oc-indigo-7);
+}
+:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title {
+  color: var(--oc-indigo-9);
+}
+
+/* wiki_syntax_detailed.css */
+:where(html.gk-core-vars) body {
+  font-family: var(--fonts-main);
+  color: var(--oc-gray-9);
+}
+:where(html.gk-core-vars) pre {
+  background-color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-4);
+}
+:where(html.gk-core-vars) a,
+:where(html.gk-core-vars) a:link,
+:where(html.gk-core-vars) a:visited {
+  color: var(--oc-blue-9);
+}
+:where(html.gk-core-vars) a:hover,
+:where(html.gk-core-vars) a:active {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) a.new {
+  color: var(--oc-red-9);
+}
+:where(html.gk-core-vars) table.sample th,
+:where(html.gk-core-vars) table.sample td {
+  border: solid 1px var(--oc-gray-5);
+}
+:where(html.gk-core-vars) table.list td {
+  background-color: var(--oc-gray-0);
+}
+:where(html.gk-core-vars) blockquote {
+  border-inline-start: 3px solid var(--oc-gray-3);
+}
+:where(html.gk-core-vars) .markdown-alert-tip {
+  border-color: var(--oc-green-7);
+}
+:where(html.gk-core-vars) .markdown-alert-tip .markdown-alert-title {
+  color: var(--oc-green-9);
+}
+:where(html.gk-core-vars) .markdown-alert-important {
+  border-color: var(--oc-grape-7);
+}
+:where(html.gk-core-vars) .markdown-alert-important .markdown-alert-title {
+  color: var(--oc-grape-9);
+}
+:where(html.gk-core-vars) .markdown-alert-caution {
+  border-color: var(--oc-yellow-7);
+}
+:where(html.gk-core-vars) .markdown-alert-caution .markdown-alert-title {
+  color: var(--oc-yellow-9);
+}
+:where(html.gk-core-vars) .markdown-alert-warning {
+  border-color: var(--oc-orange-7);
+}
+:where(html.gk-core-vars) .markdown-alert-warning .markdown-alert-title {
+  color: var(--oc-orange-9);
+}
+:where(html.gk-core-vars) .markdown-alert-note {
+  border-color: var(--oc-indigo-7);
+}
+:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title {
+  color: var(--oc-indigo-9);
+}
+
+/* responsive.css */
+@media screen and (max-width: 899px) {
+  :where(html.gk-core-vars) #header a.mobile-toggle-button {
+    color: var(--oc-gray-0);
+  }
+  :where(html.gk-core-vars) #project-jump .drdn-trigger {
+    color:var(--oc-white);
+  }
+  :where(html.gk-core-vars) #project-jump .drdn-trigger:before {
+    font-family: var(--fonts-main);
+  }
+  :where(html.gk-core-vars) .mobile-toggle-button {
+    border-inline-start: 1px solid var(--oc-gray-3);
+  }
+  :where(html.gk-core-vars) .mobile-toggle-button:after {
+    font-family: var(--fonts-main);
+  }
+  :where(html.gk-core-vars) .flyout-menu__search input[type='text'] {
+    background-color: var(--oc-white);
+  }
+  :where(html.gk-core-vars) #content>.contextual>a,
+  :where(html.gk-core-vars) #content>.contextual .drdn,
+  :where(html.gk-core-vars) p.buttons a {
+    border: 1px solid var(--oc-gray-4);
+  }
+  :where(html.gk-core-vars) .gantt_subjects_column .gantt_hdr {
+    border-inline-end: solid 1px var(--oc-gray-4);
+  }
+  :where(html.gk-core-vars) .cal .week-number {
+    border: 1px solid var(--oc-gray-4);
+    background-color: var(--oc-blue-0);
+  }
+}
