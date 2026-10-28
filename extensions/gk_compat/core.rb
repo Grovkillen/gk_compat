@@ -5,6 +5,7 @@
 # ability?
 #   GkCompat.call(:name, *args)        a shim: the same answer on every version, done each version's way
 #   GkCompat.series                    '7.0' (for showing, never for deciding)
+#   GkCompat.series_dir(base)          base/<series> when a pipeline script made data per series there, else nil
 # What differs lives in one file per supported series (versions/v6_0.rb, v6_1.rb, v7_0.rb). When a series is
 # no longer supported its file is removed and nothing else changes. Version checks exist only in this plugin.
 #
@@ -68,6 +69,15 @@ module GkCompat
 
     older = supported.select { |s| (key(s) <=> key(series)) == -1 }
     versions[older.last || supported.first] or raise Unknown, 'gk_compat has no version file at all'
+  end
+
+  # The folder under base made for the running series, when a pipeline script has made one per series (core_stuff's
+  # views from core_views.ps1: base/6.0, base/6.1, base/7.0), or nil. Only the running series' own folder, never the
+  # nearest older: copies of core's views from another series would be wrong. The one place another plugin's data
+  # per series is chosen, so that no plugin compares versions itself.
+  def series_dir(base)
+    dir = File.join(base.to_s, series)
+    File.directory?(dir) ? dir : nil
   end
 
   def can?(name)

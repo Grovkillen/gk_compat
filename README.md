@@ -26,11 +26,15 @@ GK plugins: none required and none optional. Other GK plugins use gk_compat when
 The plugin directory must be named `gk_compat` (it is the plugin id): `plugins/gk_compat/`.
 
 1. Unpack the release package into Redmine's `plugins` directory.
-2. Restart Redmine.
+2. Run the migrations: `bundle exec rake redmine:plugins:migrate RAILS_ENV=production`
+3. Restart Redmine.
 
-The plugin has no database tables and no Gemfile.
+The plugin has no database tables of its own and no Gemfile. Its one migration is there for uninstalling.
 
-Uninstall: remove the `plugins/gk_compat` directory and restart Redmine.
+Uninstall:
+
+1. `bundle exec rake redmine:plugins:migrate NAME=gk_compat VERSION=0 RAILS_ENV=production` (removes the plugin's settings)
+2. Remove the `plugins/gk_compat` directory and restart Redmine.
 
 ## Configuration
 

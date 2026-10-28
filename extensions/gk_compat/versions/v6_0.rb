@@ -57,4 +57,74 @@ GkCompat.define '6.0' do
   # format, and a plugin that adds to it does nothing. Checked on 6.0.11: lib/redmine/field_format.rb has no class
   # ProgressbarFormat.
   can :progressbar_field_format, false
+
+  # % done as text beside the bar in lists, with a setting for where it stands (progress_bar_text, #5284). Without it
+  # core_stuff's done_ratio_text adds the text. Checked on 6.0.11: config/settings.yml has no progress_bar_text.
+  can :progress_bar_text, false
+
+  # avatars: a register of picture sources (Redmine::AvatarSources) that avatar asks before Gravatar. Without it avatar
+  # knows only Gravatar (and the initials where core has them), and core_stuff's avatar_sources is the register.
+  # Checked on 6.0.11: app/helpers/avatars_helper.rb has avatar(user, options) and no sources, and lib/redmine has no
+  # AvatarSources.
+  can :avatar_sources, false
+
+  # tabs: a register where a plugin adds a tab to a settings page or the issue's history (Redmine::Tabs, and
+  # settings_tab with its siblings on Redmine::Plugin). Without it the helpers' lists are fixed, and core_stuff's
+  # settings_tabs is the register. Checked on 6.0.11: ProjectsHelper#project_settings_tabs is a fixed list, lib/redmine
+  # has no tabs.rb, and lib/redmine/plugin.rb has no settings_tab.
+  can :settings_tabs, false
+
+  # history lines: a register where a plugin says how its own journal details are drawn (Redmine::JournalDetails,
+  # and journal_detail on Redmine::Plugin). Without it IssuesHelper#show_detail knows only core's properties, and
+  # core_stuff's journal_details is the register. Checked on 6.0.11: show_detail is a fixed case over the property,
+  # lib/redmine has no journal_details.rb, and lib/redmine/plugin.rb has no journal_detail.
+  can :journal_details, false
+
+  # the layout's hooks (step 01 of view_hooks): hooks at the top and bottom of the header and footer, the top of the
+  # content and the sidebar, after the page title, and around div.issue on the issue page. Without them core_stuff's
+  # layout_hooks adds them. Checked on 6.0.11: layouts/base.html.erb calls view_layouts_base_html_head,
+  # view_layouts_base_body_top, view_layouts_base_sidebar, view_layouts_base_content and view_layouts_base_body_bottom
+  # only, and ApplicationHelper has no view_layouts_base_sidebar_top_hook_response.
+  can :layout_hooks, false
+
+  # the button row and the menus (step 04 of view_hooks): _contextual and _actions_menu hooks, and menus a plugin adds
+  # items to for an issue, the issue list's context menu, a project, a user and a version. Without them core_stuff's
+  # action_menus adds them. Checked on 6.0.11: lib/redmine/menu_manager.rb has no render_object_menu_items, and
+  # news/index.html.erb calls no _contextual hook.
+  can :action_menus, false
+
+  # the forms (step 05 of view_hooks): hooks at the top and bottom of seven forms and after sections of the issue and
+  # user forms. Without them core_stuff's form_hooks adds them. Checked on 6.0.11: projects/_form.html.erb calls no
+  # view_projects_form_top.
+  can :form_hooks, false
+
+  # the lists (step 06 of view_hooks): a row's classes and content after the row in the issue, project and user lists.
+  # Without them core_stuff's list_hooks adds them. Checked on 6.0.11: ApplicationHelper has no css_classes_from_hook.
+  can :list_hooks, false
+
+  # the footer: a setting that shows Redmine's version after Powered by Redmine (footer_show_version). Without it
+  # core_stuff's footer_version shows it. Checked on 6.0.11: config/settings.yml has no footer_show_version.
+  can :footer_version_setting, false
+
+  # the Gantt chart as PNG with the ImageMagick that configuration.yml names: core gives MiniMagick the command's
+  # folder (cli_path). Without it MiniMagick runs convert from the PATH, and core_stuff's minimagick_path gives it the
+  # command. Checked on 6.0.11: the Gemfile has mini_magick ~> 5.0.1, whose configuration has cli_prefix and no
+  # cli_path, and lib/redmine/helpers/gantt.rb sets cli_path only when MiniMagick responds to it.
+  can :minimagick_cli_path, false
+
+  # OAuth: applications under Administration, a token limited to its scopes. Without it there is no OAuth and every
+  # API call is made with the person's own rights (API key or login). Checked on 6.0.11: no app/views/doorkeeper, no
+  # doorkeeper in the Gemfile, and User has no oauth_scope.
+  can :oauth2_provider, false
+
+  # no token, so nothing to limit: what a permission covers is the caller's check alone
+  shim(:scope_allows?) { |_user, _permission| true }
+
+  # an administrator, as core says
+  shim(:admin_allows?) { |user, _permission| user&.admin? ? true : false }
+
+  # core's own condition
+  shim(:project_condition) do |user, permission, options = {}, &block|
+    Project.allowed_to_condition(user, permission, options, &block)
+  end
 end
