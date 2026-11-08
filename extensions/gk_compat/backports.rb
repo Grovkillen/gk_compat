@@ -5,10 +5,10 @@ module GkCompat
   # the ability says no, and each is core's own code from the release that fixed it, so that the older release
   # behaves the same.
   module Backports
-    # Locking or unlocking several accounts at once in the account list (Administration > Users). Before 7.0.2
-    # and 6.1.5 core wrote the status with update_all, which skips the model's callbacks, so nothing that follows
-    # an account (people's account events, the account's person) heard of it. From 7.0.2 and 6.1.5 core saves
-    # account by account (app/controllers/users_controller.rb, bulk_update_status); this is that code.
+    # Locking or unlocking several accounts at once in the account list (Administration > Users). Before 7.0.2,
+    # and in every 6.0 and 6.1 release so far, core writes the status with update_all, which skips the model's
+    # callbacks, so nothing that follows an account (people's account events, the account's person) hears of it.
+    # From 7.0.2 core saves account by account (app/controllers/users_controller.rb, bulk_update_status); this is that code.
     module BulkStatus
       private
 

@@ -1,4 +1,4 @@
-/* gk_compat_core_vars.css: built by tools/core_vars.rb from Redmine 7.0.2's own stylesheets; do not edit by hand.
+/* gk_compat_core_vars.css: built by tools/core_vars.rb from Redmine 7.0.3's own stylesheets; do not edit by hand.
    Where core has fixed colours, a GK plugin marks the page with html.gk-core-vars to have core's elements drawn with core's
    colour variables (--oc-*) the way the newest supported series draws them; without the class nothing here applies and
    the series looks as it does. Loaded only where core lacks the variables (compat's css_variables, no). */
@@ -1213,109 +1213,6 @@ html:where(.gk-core-vars) {
   border-inline-start: 6px solid var(--oc-gray-3);
 }
 
-/* wiki_syntax.css */
-:where(html.gk-core-vars) h1 {
-  font-family: var(--fonts-main);
-  color: var(--oc-gray-8);
-}
-:where(html.gk-core-vars) body {
-  font-family: var(--fonts-main);
-  color: var(--oc-gray-8);
-}
-:where(html.gk-core-vars) table th img {
-  border: 1px solid var(--oc-gray-5);
-}
-:where(html.gk-core-vars) table th .syntax-pre {
-  border: 1px solid var(--oc-gray-5);
-}
-:where(html.gk-core-vars) table th .syntax-pre:before {
-  color: var(--oc-gray-7);
-}
-:where(html.gk-core-vars) table td {
-  background-color: var(--oc-gray-0);
-}
-:where(html.gk-core-vars) table.sample th,
-:where(html.gk-core-vars) table.sample td {
-  border: solid 1px var(--oc-gray-5);
-}
-:where(html.gk-core-vars) a,
-:where(html.gk-core-vars) a:link,
-:where(html.gk-core-vars) a:visited {
-  color: var(--oc-blue-9);
-}
-:where(html.gk-core-vars) a:hover,
-:where(html.gk-core-vars) a:active {
-  color: var(--oc-red-9);
-}
-:where(html.gk-core-vars) .markdown-alert-note {
-  border-color: var(--oc-indigo-7);
-}
-:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title {
-  color: var(--oc-indigo-9);
-}
-
-/* wiki_syntax_detailed.css */
-:where(html.gk-core-vars) body {
-  font-family: var(--fonts-main);
-  color: var(--oc-gray-9);
-}
-:where(html.gk-core-vars) pre {
-  background-color: var(--oc-gray-0);
-  border: 1px solid var(--oc-gray-4);
-}
-:where(html.gk-core-vars) a,
-:where(html.gk-core-vars) a:link,
-:where(html.gk-core-vars) a:visited {
-  color: var(--oc-blue-9);
-}
-:where(html.gk-core-vars) a:hover,
-:where(html.gk-core-vars) a:active {
-  color: var(--oc-red-9);
-}
-:where(html.gk-core-vars) a.new {
-  color: var(--oc-red-9);
-}
-:where(html.gk-core-vars) table.sample th,
-:where(html.gk-core-vars) table.sample td {
-  border: solid 1px var(--oc-gray-5);
-}
-:where(html.gk-core-vars) table.list td {
-  background-color: var(--oc-gray-0);
-}
-:where(html.gk-core-vars) blockquote {
-  border-inline-start: 3px solid var(--oc-gray-3);
-}
-:where(html.gk-core-vars) .markdown-alert-tip {
-  border-color: var(--oc-green-7);
-}
-:where(html.gk-core-vars) .markdown-alert-tip .markdown-alert-title {
-  color: var(--oc-green-9);
-}
-:where(html.gk-core-vars) .markdown-alert-important {
-  border-color: var(--oc-grape-7);
-}
-:where(html.gk-core-vars) .markdown-alert-important .markdown-alert-title {
-  color: var(--oc-grape-9);
-}
-:where(html.gk-core-vars) .markdown-alert-caution {
-  border-color: var(--oc-yellow-7);
-}
-:where(html.gk-core-vars) .markdown-alert-caution .markdown-alert-title {
-  color: var(--oc-yellow-9);
-}
-:where(html.gk-core-vars) .markdown-alert-warning {
-  border-color: var(--oc-orange-7);
-}
-:where(html.gk-core-vars) .markdown-alert-warning .markdown-alert-title {
-  color: var(--oc-orange-9);
-}
-:where(html.gk-core-vars) .markdown-alert-note {
-  border-color: var(--oc-indigo-7);
-}
-:where(html.gk-core-vars) .markdown-alert-note .markdown-alert-title {
-  color: var(--oc-indigo-9);
-}
-
 /* responsive.css */
 @media screen and (max-width: 899px) {
   :where(html.gk-core-vars) #header a.mobile-toggle-button {
@@ -1348,4 +1245,10 @@ html:where(.gk-core-vars) {
     border: 1px solid var(--oc-gray-4);
     background-color: var(--oc-blue-0);
   }
+}
+
+/* older series' names for the same element */
+:where(html.gk-core-vars) #history div:target h4.note-header,
+:where(html.gk-core-vars) #replies .reply:target h4.reply-header {
+  background-color:var(--oc-blue-0);
 }

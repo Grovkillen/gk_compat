@@ -1,0 +1,22 @@
+/* gk_compat: the copy button on code blocks, for a Redmine series whose core has none: the newer core's own rules. Loaded
+   before gk_compat_core_vars.css, which draws the button's colours with core's variables. */
+div.wiki div.pre-wrapper {
+  position: relative;
+}
+
+div.pre-wrapper a.copy-pre-content-link {
+  position: absolute;
+  inset-block-start: 3px;
+  inset-inline-end: calc(1em + 3px);
+  cursor: pointer;
+  display: none;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding-block: 0 3px;
+  padding-inline: 3px;
+}
+
+div.pre-wrapper:hover a.copy-pre-content-link {
+  display: block;
+}

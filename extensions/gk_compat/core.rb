@@ -135,15 +135,37 @@ module GkCompat
   if defined?(Redmine::Hook::ViewListener)
     # The warning on the administration pages, for administrators only
     class Hooks < Redmine::Hook::ViewListener
+      def view_layouts_base_html_head(context = {})
+        # first, so that the colours of the core variables' stylesheet go over the button's
+        code_copy_button(context) + colour_variables
+      end
+
       # core's colour variables on every page, the login page too, where core lacks them
-      def view_layouts_base_html_head(_context = {})
-        return '' unless GkCompat.fills_css_variables?
+      def colour_variables
+        return ''.html_safe unless GkCompat.fills_css_variables?
 
         # and core's elements drawn with them under html.gk-core-vars, which only a GK plugin sets (tools/core_vars.rb)
         stylesheet_link_tag('gk_compat_open_color', plugin: 'gk_compat') + stylesheet_link_tag('gk_compat_core_vars', plugin: 'gk_compat')
       rescue StandardError => e
         Rails.logger.error("[gk_compat] colour variables not loaded: #{e.class}: #{e.message}")
-        ''
+        ''.html_safe
+      end
+
+      # the copy button on code blocks where core has none: the newer core's markup, drawn by a script as in 6.1, so that
+      # what a plugin does with the button works on every series
+      def code_copy_button(context)
+        view = context[:hook_caller]
+        return ''.html_safe if GkCompat.can?(:code_copy_button) || !view.respond_to?(:sprite_icon)
+
+        cfg = { title: l(:button_copy),
+                icon: view.sprite_icon('copy-pre-content', size: 18, plugin: :gk_compat).to_s,
+                checked: view.sprite_icon('checked', size: 18).to_s }
+        stylesheet_link_tag('gk_compat_code_copy', plugin: 'gk_compat') +
+          javascript_tag("window.GkCompatCodeCopy = #{cfg.to_json};") +
+          javascript_include_tag('gk_compat_code_copy', plugin: 'gk_compat')
+      rescue StandardError => e
+        Rails.logger.error("[gk_compat] copy button on code blocks not loaded: #{e.class}: #{e.message}")
+        ''.html_safe
       end
 
       def view_layouts_base_content(context = {})

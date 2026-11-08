@@ -6,9 +6,10 @@ GK Compat is the one place in the GK plugins that knows which Redmine version is
 
 - Answers whether the running Redmine has a given ability (`GkCompat.can?`), for example whether core draws with CSS variables, marks the reading direction with `dir`, supports icon styles in `sprite_icon`, still carries the raster icon classes, or asks administrators for their password again (sudo mode) by default.
 - Calls shims (`GkCompat.call`) that give the same answer on every supported series, each done that series' way.
-- States abilities per series, with an optional `since:` release for a change that came within a series (for example from 6.1.5 or 7.0.2).
+- States abilities per series, with an optional `since:` release for a change that came within a series (for example from 7.0.2 or 7.0.3).
 - On Redmine 6.0 and 6.1, adds core's colour variables (`--oc-*`, Open Color 1.9.1, the same file Redmine 7.0 carries) to every page, so stylesheets can be written once for 7.0.
-- Backports a core fix to older releases: locking or unlocking several accounts at once in Administration > Users saves account by account, so the model's callbacks run (core's own code from 6.1.5 and 7.0.2).
+- Backports a core fix to older releases: locking or unlocking several accounts at once in Administration > Users saves account by account, so the model's callbacks run (core's own code from 7.0.2; Redmine 6.0 and 6.1 get it from GK Compat).
+- Gives other plugins one ActiveRecord type for their own time columns, `GkCompat::Instant`: every instant is written in UTC with the offset written out, so what is stored never depends on the database session's time zone (`GkCompat::Instant.attributes!(model, *columns)` in a model, `GkCompat::Instant.text(time)` for a time compared in SQL).
 - When the running Redmine series has no version file, runs on the nearest older file and warns administrators in the log and on the administration and settings pages.
 
 ## Requirements
