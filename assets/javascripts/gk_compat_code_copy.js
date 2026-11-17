@@ -14,9 +14,17 @@
     if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, old); else old();
   }
 
+  // the texts and icons, from the JSON element the hook draws (script#gk-compat-code-copy), read once
+  var cfg;
+  function config() {
+    if (cfg !== undefined) return cfg;
+    var el = document.getElementById('gk-compat-code-copy');
+    try { cfg = el ? JSON.parse(el.textContent) : null; } catch (e) { cfg = null; }
+    return cfg;
+  }
+
   function setup() {
-    var cfg = window.GkCompatCodeCopy;
-    if (!cfg) return;
+    if (!config()) return;
     document.querySelectorAll('.wiki pre:not(.pre-wrapper pre)').forEach(function (pre) {
       var wrapper = document.createElement('div');
       wrapper.className = 'pre-wrapper';

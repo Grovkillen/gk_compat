@@ -13,7 +13,7 @@ Redmine::Plugin.register :gk_compat do
   name        'GK Compat'
   author      'Jimmy Westberg'
   description 'Connects every GK plugin that needs it to Redmine in the same way, whatever the version: mends older versions backwards and tells the plugins how to behave'
-  version     '1.02.000'
+  version     '1.03.000'
   requires_redmine version_or_higher: '6.0.0'
 
   settings default: {}, partial: 'settings/gk_compat_settings'

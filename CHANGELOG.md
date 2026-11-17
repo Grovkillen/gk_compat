@@ -2,6 +2,18 @@
 
 All notable changes to GK Compat are documented in this file.
 
+## 1.03.000 (2026-11-15)
+
+### Added
+
+* The ability `chart_js_module`: whether Redmine loads Chart.js as a module through the import map, with no global `Chart`. Yes on Redmine 7.0, no on 6.0 and 6.1, where a page with a chart includes Chart.js as a classic script that sets `window.Chart`.
+
+### Fixed
+
+* The change log on the settings page is drawn as Redmine's own formatted text straight in its box, without a fold of its own. Where GK GUI Stuff runs, its settings frame folds the log per version as for every other GK plugin, instead of finding a second fold inside it; without GK GUI Stuff the log stands open.
+* The cells of the abilities table on the settings page are plain table cells, without wrappers or classes of their own; what each cell says is unchanged.
+* The copy button on code blocks in Redmine 6.0 reads its texts and icons from a JSON element on the page instead of from a script that set a global variable.
+
 ## 1.02.000 (2026-11-07)
 
 ### Added

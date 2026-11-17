@@ -188,6 +188,12 @@ GkCompat.define '6.0' do
   # cli_path, and lib/redmine/helpers/gantt.rb sets cli_path only when MiniMagick responds to it.
   can :minimagick_cli_path, false
 
+  # charts: core loads Chart.js as a module through the import map, with no global Chart. Without it a view includes
+  # chart.min.js as a classic script, which sets window.Chart. Checked on 6.0.12: app/views/reports/_details.html.erb and
+  # app/views/repositories/stats.html.erb add javascript_include_tag "chart.min" to header_tags and call new Chart(...)
+  # in the view's own script; app/assets/javascripts/chart.min.js is Chart.js 3.9.1.
+  can :chart_js_module, false
+
   # OAuth: applications under Administration, a token limited to its scopes. Without it there is no OAuth and every
   # API call is made with the person's own rights (API key or login). Checked on 6.0.12: no app/views/doorkeeper, no
   # doorkeeper in the Gemfile, and User has no oauth_scope.

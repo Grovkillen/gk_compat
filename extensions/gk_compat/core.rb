@@ -161,7 +161,8 @@ module GkCompat
                 icon: view.sprite_icon('copy-pre-content', size: 18, plugin: :gk_compat).to_s,
                 checked: view.sprite_icon('checked', size: 18).to_s }
         stylesheet_link_tag('gk_compat_code_copy', plugin: 'gk_compat') +
-          javascript_tag("window.GkCompatCodeCopy = #{cfg.to_json};") +
+          # the button's texts and icons as data the script reads, not as a script of its own
+          content_tag(:script, ERB::Util.json_escape(cfg.to_json).html_safe, type: 'application/json', id: 'gk-compat-code-copy') +
           javascript_include_tag('gk_compat_code_copy', plugin: 'gk_compat')
       rescue StandardError => e
         Rails.logger.error("[gk_compat] copy button on code blocks not loaded: #{e.class}: #{e.message}")

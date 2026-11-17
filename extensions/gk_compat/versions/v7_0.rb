@@ -180,6 +180,14 @@ GkCompat.define '7.0' do
   # cli_path, and lib/redmine/helpers/gantt.rb sets cli_path only when MiniMagick responds to it.
   can :minimagick_cli_path, false
 
+  # charts: core loads Chart.js as a module through the import map (import('chart.js'), the same module for every
+  # importer, with no global Chart), from its Stimulus controllers reports--details and repositories--stats. Without it
+  # a view includes chart.min.js as a classic script, which sets window.Chart. Checked on 7.0.3: config/importmap.rb
+  # pins "chart.js" to chart.min.js (Chart.js 4.5.1, preload false), app/javascript/controllers/reports/
+  # details_controller.js and repositories/stats_controller.js call import('chart.js'), and app/assets/javascripts has
+  # no chart.min.js.
+  can :chart_js_module, true
+
   # OAuth: applications under Administration, a token limited to its scopes (the permissions' names and :admin).
   # Without it there is no OAuth and every API call is made with the person's own rights. Checked on 7.0.3:
   # app/views/doorkeeper/applications/_form.html.erb lists the permissions as scopes, ApplicationController#
